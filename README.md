@@ -101,7 +101,7 @@ npm run build
 npm run preview
 ```
 
-通常のURLは <http://127.0.0.1:4173/tools/estimate/> です。公開先を変更する場合は `vite.config.js` の `base` と `index.html` のcanonicalを変更してください。本番配置・GitHubへのpushはこの作業では行っていません。
+通常のURLは <http://127.0.0.1:4173/tools/estimate/> です。公開先を変更する場合は `vite.config.js` の `base` と `index.html` のcanonicalを変更してください。本番への配置は別途行ってください。
 
 ## 構成と実装方針
 
@@ -116,6 +116,14 @@ npm run preview
 画面の色・書体は `~/tomo-cs-renewal/css/foundation/_variables.css` を参考にしています。元サイトのファイルは変更していません。ヘッダーは本体のロゴ・英文ナビ・900px以下のハンバーガーメニュー・スクロール時の縮小と背景変化を移植しています。各メニューは `https://tomo-cs.com/` の対応セクションへ移動します。
 
 ロゴ画像は本体から `src/assets/TCSlogo.png` にコピーしました。英文書体は本体と同じ Cormorant Garamond のitalic 400です。Google Fonts配布のフォントを英文用に軽量化したWOFF2として同梱し、ライセンスは `src/assets/OFL-CormorantGaramond.txt` に保存しています。外部へのフォント・画像リクエストや計測スクリプトを使わず、静的ファイルで完結させています。
+
+## ライセンス
+
+本プロジェクトは [MIT License](LICENSE) で提供します。
+
+Copyright (c) 2026 Tomohiro Miyata / TomoCreateService
+
+同梱する Cormorant Garamond フォントには、[SIL Open Font License 1.1](src/assets/OFL-CormorantGaramond.txt) が適用されます。
 
 ## 開発について
 
