@@ -1,0 +1,62 @@
+@layer foundation {
+  :where(*, *::before, *::after) {
+    box-sizing: border-box;
+  }
+  :where(body, h1, h2, h3, p, fieldset, ul, dl, dd) {
+    margin: 0;
+    padding: 0;
+  }
+  :where(body) {
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+  }
+  :where(a) {
+    color: inherit;
+    text-decoration: none;
+  }
+  :where(button, input) {
+    font: inherit;
+    color: inherit;
+  }
+  :where(button, a, input) {
+    -webkit-tap-highlight-color: transparent;
+  }
+  :where(button, label, input[type="checkbox"], input[type="radio"]) {
+    cursor: pointer;
+  }
+  :where(button:disabled, input:disabled) {
+    cursor: default;
+  }
+  :where(fieldset) {
+    min-width: 0;
+    border: 0;
+  }
+  :where(ul) {
+    list-style: none;
+  }
+  :where(input) {
+    min-width: 0;
+    accent-color: var(--color-text);
+  }
+  :where(input[type="text"], input[type="number"]) {
+    font-size: 16px;
+  }
+  :where(input[type="checkbox"], input[type="radio"]) {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    margin: 4px 0 0;
+  }
+  :where(:focus-visible) {
+    outline: 2px solid var(--color-text);
+    outline-offset: 5px;
+  }
+  :where(::selection) {
+    background: var(--color-accent);
+    color: var(--color-text);
+  }
+}

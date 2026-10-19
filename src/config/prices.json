@@ -1,0 +1,87 @@
+{
+  "taxRatePercent": 10,
+  "services": {
+    "website": {
+      "label": "ホームページ制作",
+      "price": 100000,
+      "from": true,
+      "description": "TOP＋下層2ページ。デザインから公開まで、レスポンシブ・お問い合わせフォーム・基本SEOを含みます。"
+    },
+    "landing": {
+      "label": "LP制作",
+      "price": 80000,
+      "from": true,
+      "description": "伝えたい魅力を、1ページに。デザイン・コーディング・レスポンシブ対応。フォームは別途です。"
+    },
+    "app": {
+      "label": "Webアプリ開発",
+      "price": 100000,
+      "from": true,
+      "description": "規模・機能に応じて個別にお見積もりします。表示金額は目安です。",
+      "consultation": true
+    },
+    "coding": {
+      "label": "コーディング代行",
+      "price": 0,
+      "description": "制作会社様・デザイナー様へ。ご支給のデザインデータから実装します。"
+    },
+    "options": {
+      "label": "オプションのみ",
+      "price": 0,
+      "description": "既存サイトへのフォーム追加、WordPress導入などをご検討の方へ。"
+    }
+  },
+  "coding": {
+    "top": {
+      "label": "TOPページ",
+      "price": 30000,
+      "from": true,
+      "unit": "ページ"
+    },
+    "subpage": {
+      "label": "下層ページ",
+      "price": 10000,
+      "from": true,
+      "unit": "ページ"
+    },
+    "lp": {
+      "label": "LPコーディング",
+      "price": 40000,
+      "from": true,
+      "unit": "本"
+    }
+  },
+  "options": {
+    "pages": {
+      "label": "追加ページ制作",
+      "price": 25000,
+      "from": true,
+      "unit": "ページ",
+      "quantity": true
+    },
+    "form": {
+      "label": "お問い合わせフォーム設置",
+      "price": 10000,
+      "description": "LP・既存サイトへの追加に。"
+    },
+    "animation": {
+      "label": "GSAPアニメーション",
+      "price": 10000,
+      "from": true,
+      "unit": "ブロック",
+      "quantity": true
+    },
+    "wordpress": {
+      "label": "WordPress導入・構築",
+      "price": 40000,
+      "from": true
+    },
+    "server": { "label": "ドメイン・サーバー設定", "price": 5000 }
+  },
+  "maintenance": {
+    "label": "月次保守プラン",
+    "price": 5000,
+    "from": true,
+    "description": "公開後の運用も、継続してサポートします。"
+  }
+}

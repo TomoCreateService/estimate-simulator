@@ -1,0 +1,123 @@
+@layer component {
+  .c-visuallyHidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+  }
+  .c-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    min-height: 52px;
+    width: 100%;
+    padding: 12px 20px;
+    border: 1px solid var(--color-text);
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    font-weight: 500;
+    text-align: left;
+  }
+  .c-button--primary {
+    background: var(--color-text);
+    color: var(--color-surface);
+  }
+  .c-button--outline {
+    background: transparent;
+    color: var(--color-text);
+  }
+  .c-button:disabled {
+    opacity: 0.4;
+  }
+  .c-stepNumber {
+    display: inline-grid;
+    place-items: center;
+    width: 31px;
+    height: 31px;
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    font-family: var(--font-english);
+    font-size: 17px;
+    flex-shrink: 0;
+  }
+  .c-badge {
+    display: inline-block;
+    background: var(--color-accent);
+    color: var(--color-text);
+    padding: 2px 8px;
+    font-size: 10px;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  .c-quantity {
+    width: 72px;
+    height: 40px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 0;
+    padding: 4px 8px;
+    text-align: center;
+  }
+  .c-taxSwitch {
+    display: inline-flex;
+    border: 1px solid var(--color-border);
+    padding: 3px;
+    flex-shrink: 0;
+  }
+  .c-taxSwitch label {
+    position: relative;
+  }
+  .c-taxSwitch input {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+  .c-taxSwitch span {
+    display: block;
+    padding: 5px 16px;
+    font-size: 12px;
+  }
+  .c-taxSwitch input:checked + span {
+    color: var(--color-surface);
+    background: var(--color-text);
+  }
+  .c-taxSwitch input:focus-visible + span {
+    outline: 2px solid var(--color-text);
+    outline-offset: 4px;
+  }
+}
+
+@layer animation {
+  .c-button,
+  .p-service {
+    transition:
+      background-color 0.2s,
+      color 0.2s;
+  }
+  @media (hover: hover) {
+    .c-button--primary:hover {
+      background: var(--color-accent);
+      color: var(--color-text);
+    }
+    .c-button--outline:enabled:hover {
+      background: var(--color-bg);
+    }
+    .p-service:hover {
+      background: var(--color-surface);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .c-button,
+    .p-service {
+      transition: none;
+    }
+  }
+}

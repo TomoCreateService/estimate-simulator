@@ -1,0 +1,11 @@
+@use "sass:meta";
+
+@layer tokens, theme, foundation, layout, component, project, animation, utility;
+
+@include meta.load-css("foundation/tokens");
+@include meta.load-css("foundation/base");
+@include meta.load-css("layout/layout");
+@include meta.load-css("object/component/controls");
+@include meta.load-css("object/project/simulator");
+@include meta.load-css("object/project/header");
+@include meta.load-css("object/project/document");

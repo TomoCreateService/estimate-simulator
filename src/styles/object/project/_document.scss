@@ -1,0 +1,134 @@
+@layer project {
+  .p-document {
+    display: none;
+  }
+  @media print {
+    .p-screen {
+      display: none;
+    }
+    .p-document {
+      display: block;
+      color: #1a1a1a;
+      background: #fff;
+      font-size: 10pt;
+      line-height: 1.8;
+    }
+    .p-document__header {
+      display: flex;
+      justify-content: space-between;
+      gap: 10mm;
+      padding-bottom: 5mm;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    .p-document__header p {
+      font-family: var(--font-english);
+      font-size: 13pt;
+    }
+    .p-document h1 {
+      font-family: var(--font-heading);
+      font-size: 27pt;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      margin-top: 2mm;
+    }
+    .p-document__header dl {
+      padding-top: 2mm;
+      font-size: 8pt;
+    }
+    .p-document__header dl > div {
+      display: flex;
+      justify-content: space-between;
+      gap: 5mm;
+    }
+    .p-document__recipient {
+      font-size: 15pt;
+      padding-top: 6mm;
+      margin-bottom: 4mm;
+      overflow-wrap: anywhere;
+    }
+    .p-document__total {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 6mm;
+      border-bottom: 2px solid #1a1a1a;
+      padding: 4mm 0;
+      margin-bottom: 5mm;
+    }
+    .p-document__total strong {
+      font-size: 24pt;
+      font-weight: 500;
+    }
+    .p-document h2 {
+      margin-block: 5mm 3mm;
+      font-size: 10pt;
+      font-weight: 500;
+    }
+    .p-document table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 9pt;
+    }
+    .p-document th,
+    .p-document td {
+      padding: 2mm 2mm;
+      text-align: right;
+      border-bottom: 1px solid #ccc;
+    }
+    .p-document th:first-child {
+      text-align: left;
+    }
+    .p-document thead th {
+      border-top: 1px solid #1a1a1a;
+      font-weight: 500;
+    }
+    .p-document tbody th {
+      font-weight: 400;
+    }
+    .p-document tr {
+      break-inside: avoid;
+    }
+    .p-document__totals {
+      width: 72mm;
+      margin: 3mm 0 5mm auto;
+    }
+    .p-document__totals > div {
+      display: flex;
+      justify-content: space-between;
+      padding-block: 1mm;
+    }
+    .p-document__totals > div:last-child {
+      border-top: 1px solid #1a1a1a;
+      font-weight: 600;
+    }
+    .p-document__notes {
+      margin-top: 6mm;
+      border-top: 1px solid #ccc;
+      padding-top: 2mm;
+      font-size: 8pt;
+      break-inside: avoid;
+    }
+    .p-document__notes p + p {
+      margin-top: 2mm;
+    }
+    .p-document__footer {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 5mm;
+      padding-top: 4mm;
+      border-top: 1px solid #1a1a1a;
+      font-size: 9pt;
+    }
+  }
+}
+
+@page {
+  size: A4 portrait;
+  margin: 16mm;
+}
+
+@media print {
+  body {
+    background: #fff;
+  }
+}

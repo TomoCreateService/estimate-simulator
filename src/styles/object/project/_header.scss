@@ -1,0 +1,203 @@
+@font-face {
+  font-family: "TCS Header";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../../../assets/cormorant-garamond-italic.woff2") format("woff2");
+}
+
+@layer project {
+  .p-siteHeader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 22px 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 40;
+    border-bottom: 1px solid transparent;
+  }
+  .p-siteHeader.is-scrolled {
+    background: rgba(254, 252, 247, 0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 14px 56px;
+    border-bottom-color: rgba(26, 26, 26, 0.08);
+  }
+
+  .p-siteHeader__brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .p-siteHeader__brand img {
+    width: 40px;
+    height: 40px;
+  }
+  .p-siteHeader__brand .p-siteHeader__wordmark {
+    font-family: "TCS Header", var(--garamond);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 29px;
+    letter-spacing: 0.02em;
+    line-height: 1;
+  }
+
+  .p-siteHeader__nav {
+    display: flex;
+    gap: 30px;
+    font-family: "TCS Header", var(--garamond);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 21px;
+    color: var(--ink);
+  }
+  .p-siteHeader__nav a {
+    position: relative;
+    padding: 6px 2px;
+  }
+  .p-siteHeader__nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background: var(--ink);
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  .p-siteHeader__nav a:hover::after,
+  .p-siteHeader__nav a.current::after {
+    transform: scaleX(1);
+  }
+
+  .p-hamburger {
+    display: none;
+    position: fixed;
+    top: 18px;
+    right: 16px;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    z-index: 60;
+  }
+  .p-hamburger span {
+    position: absolute;
+    left: 6px;
+    display: block;
+    width: 24px;
+    height: 1.5px;
+    background: var(--ink);
+  }
+  .p-hamburger span:nth-child(1) {
+    top: 11px;
+  }
+  .p-hamburger span:nth-child(2) {
+    top: 17px;
+  }
+  .p-hamburger span:nth-child(3) {
+    top: 23px;
+  }
+  .p-hamburger.is-open span:nth-child(1) {
+    top: 17px;
+    transform: rotate(45deg);
+  }
+  .p-hamburger.is-open span:nth-child(2) {
+    opacity: 0;
+  }
+  .p-hamburger.is-open span:nth-child(3) {
+    top: 17px;
+    transform: rotate(-45deg);
+  }
+
+  .p-mobileNav {
+    display: none;
+  }
+
+  @media (max-width: 900px) {
+    .p-siteHeader {
+      padding: 18px 22px;
+    }
+    .p-siteHeader.is-scrolled {
+      padding: 12px 22px;
+    }
+    .p-siteHeader__nav {
+      display: none;
+    }
+    .p-hamburger {
+      display: block;
+    }
+
+    .p-mobileNav {
+      position: fixed;
+      inset: 0;
+      z-index: 55;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 24px;
+      padding: 80px 24px 40px;
+
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      opacity: 0;
+      visibility: hidden;
+    }
+    .p-mobileNav {
+      overflow-y: auto;
+      justify-content: safe center;
+    }
+    .p-mobileNav.is-open {
+      opacity: 1;
+      visibility: visible;
+    }
+    .p-mobileNav a {
+      font-family: "TCS Header", var(--garamond);
+      font-style: italic;
+      font-weight: 400;
+      font-size: 28px;
+      color: var(--ink, #1a1a1a);
+      letter-spacing: 0.06em;
+      padding: 8px 16px;
+    }
+  }
+}
+
+@layer animation {
+  .p-siteHeader {
+    transition:
+      background 0.45s ease,
+      padding 0.45s ease,
+      border-color 0.45s;
+  }
+  .p-siteHeader__nav a::after {
+    transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .p-hamburger span {
+    transition:
+      top 0.3s ease,
+      transform 0.3s ease,
+      opacity 0.2s ease;
+  }
+  .p-mobileNav {
+    transition:
+      opacity 0.35s ease,
+      visibility 0.35s;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .p-siteHeader,
+    .p-siteHeader__nav a::after,
+    .p-hamburger span,
+    .p-mobileNav {
+      transition: none;
+    }
+  }
+}

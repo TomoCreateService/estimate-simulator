@@ -1,0 +1,44 @@
+@layer layout {
+  .l-main,
+  .l-footer {
+    max-width: 1292px;
+    margin-inline: auto;
+    padding-inline: 22px;
+  }
+  .l-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .l-main {
+    padding-top: 76px;
+  }
+  .l-simulator {
+    display: grid;
+    gap: 40px;
+    align-items: start;
+  }
+  .l-footer {
+    padding-block: 28px;
+  }
+  @media (min-width: 768px) {
+    .l-main,
+    .l-footer {
+      padding-inline: 48px;
+    }
+  }
+  @media (min-width: 1024px) {
+    .l-simulator {
+      grid-template-columns: minmax(0, 1fr) 360px;
+      gap: 48px;
+    }
+  }
+  @media (min-width: 1280px) {
+    .l-simulator {
+      grid-template-columns: minmax(0, 1fr) 390px;
+      gap: 64px;
+    }
+  }
+}

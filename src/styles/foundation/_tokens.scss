@@ -1,0 +1,31 @@
+@layer tokens {
+  :root {
+    --base: #fefcf7;
+    --white: #fff;
+    --ink: #1a1a1a;
+    --sub: #6b6560;
+    --hair: rgba(26, 26, 26, 0.14);
+    --cyan: #00ffff;
+    --magenta: #ff00ff;
+    --yellow: #ffff00;
+    --mincho:
+      "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", "Noto Serif JP", serif;
+    --gothic:
+      "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", sans-serif;
+    --garamond: "Cormorant Garamond", "Georgia", serif;
+  }
+}
+
+@layer theme {
+  :root {
+    --color-bg: var(--base);
+    --color-surface: var(--white);
+    --color-text: var(--ink);
+    --color-muted: var(--sub);
+    --color-border: var(--hair);
+    --color-accent: var(--yellow);
+    --font-heading: var(--mincho);
+    --font-body: var(--gothic);
+    --font-english: var(--garamond);
+  }
+}
