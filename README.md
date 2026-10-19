@@ -121,6 +121,8 @@ npm run preview
 
 本プロジェクトは [MIT License](LICENSE) で提供します。
 
+ただし、TomoCreateService のロゴ画像・屋号は MIT ライセンスの対象外です。
+
 Copyright (c) 2026 Tomohiro Miyata / TomoCreateService
 
 同梱する Cormorant Garamond フォントには、[SIL Open Font License 1.1](src/assets/OFL-CormorantGaramond.txt) が適用されます。
